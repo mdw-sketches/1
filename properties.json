@@ -1,0 +1,7 @@
+{
+  "name": "1",
+  "files": {
+    "processing": ["processing.pde", "Cell.pde", "Grid.pde"],
+    "p5js": ["index.js", "Cell.js", "Grid.js"]
+  }
+}
