@@ -12,4 +12,5 @@ void draw(){
   background(0);
   grid.show();
   if(frameCount > 50) grid.animate(ANIMATION_AMOUNT);
+  //if(frameCount > 50) grid.animate2();
 }

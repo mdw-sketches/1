@@ -1,9 +1,9 @@
 
 
 public class Cell {
-  int x;
-  int y;
-  int l;
+  public int x;
+  public int y;
+  private float l;
   
   boolean orientation;
   
@@ -16,7 +16,7 @@ public class Cell {
   
   public void show(){
     stroke(255);
-    strokeWeight(2);
+    strokeWeight(1.5);
     noFill();
     
     if (!orientation) line(x, y, x+l, y+l);
@@ -25,5 +25,9 @@ public class Cell {
   
   public void changeOrientation() {
     orientation = !orientation;
+  }
+  
+  public void setOrientation(boolean orientation) {
+    this.orientation = orientation;
   }
 }

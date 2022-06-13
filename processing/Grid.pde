@@ -1,5 +1,7 @@
 import java.util.Random;
 
+float scale = 0.002;
+
 public class Grid {
   Cell[][] cells;
   private int xAmount;
@@ -8,6 +10,8 @@ public class Grid {
   private int yStart;
   public static final int l = 10;
   private Random rng;
+  
+  private float z = 0;
   
   
   public Grid() {
@@ -45,6 +49,17 @@ public class Grid {
       int rj = rng.nextInt(yAmount);
       
       cells[ri][rj].changeOrientation();
+    }
+  }
+  
+  public void animate2(){
+    for (Cell[] row : cells) {
+      for(Cell cell: row) {
+        float n = noise(cell.x*scale, cell.y*scale, z);
+        if (n>0.5) cell.setOrientation(true);
+        else cell.setOrientation(false);
+        z += 0.00002;
+      }
     }
   }
   
