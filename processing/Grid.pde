@@ -6,8 +6,6 @@ public class Grid {
   private int yAmount;
   private int xStart;
   private int yStart;
-  private int xm;
-  private int ym;
   public static final int l = 10;
   private Random rng;
   
@@ -17,8 +15,6 @@ public class Grid {
     yAmount = height/l - 2;
     xStart = l + (width%l)/2;
     yStart = l + (height%l)/2;
-    xm = (width&l)/2;
-    ym = (height%l)/2;
     
     rng = new Random();
     
