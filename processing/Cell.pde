@@ -14,15 +14,26 @@ public class Cell {
     this.orientation = orientation;
   }
   
+  // public void show(){
+  //   stroke(255);
+  //   strokeWeight(1.5);
+  //   noFill();
+  //   
+  //   if (!orientation) line(x, y, x+l, y+l);
+  //   else line(x, y+l, x+l, y);
+  // }
+
   public void show(){
-    stroke(255);
-    strokeWeight(1.5);
-    noFill();
-    
-    if (!orientation) line(x, y, x+l, y+l);
-    else line(x, y+l, x+l, y);
+    noStroke();
+    fill(255);
+    if (this.orientation) {
+      //draw at top
+      rect(this.x, this.y, this.l, this.l/2);
+    }else {
+      rect(this.x, this.y, this.l/2, this.l);
+    }
   }
-  
+
   public void changeOrientation() {
     orientation = !orientation;
   }
