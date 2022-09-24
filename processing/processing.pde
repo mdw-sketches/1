@@ -2,7 +2,7 @@ Grid grid;
 final int ANIMATION_AMOUNT = 20;
 
 void setup(){
-  size(500, 500);
+  size(800, 800);
   background(0);
   
   grid = new Grid();

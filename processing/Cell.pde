@@ -28,9 +28,9 @@ public class Cell {
     fill(255);
     if (this.orientation) {
       //draw at top
-      rect(this.x, this.y, this.l, this.l/2);
+      rect(this.x, this.y + this.l / 3, this.l, this.l/3);
     }else {
-      rect(this.x, this.y, this.l/2, this.l);
+      rect(this.x + this.l/3, this.y, this.l/3, this.l);
     }
   }
 

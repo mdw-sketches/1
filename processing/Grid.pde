@@ -8,7 +8,7 @@ public class Grid {
   private int yAmount;
   private int xStart;
   private int yStart;
-  public static final int l = 10;
+  public static final int l = 20;
   private Random rng;
   
   private float z = 0;
