@@ -1,6 +1,11 @@
 import java.util.Random;
+import java.lang.Math;
 
-float scale = 0.002;
+// float scale = 0.001;
+final float THRESHOLD = 0.7;
+float scale = 600.0;
+
+float z_inc = 0.000005;
 
 public class Grid {
   Cell[][] cells;
@@ -8,7 +13,7 @@ public class Grid {
   private int yAmount;
   private int xStart;
   private int yStart;
-  public static final int l = 20;
+  public static final int l = 16;
   private Random rng;
   
   private float z = 0;
@@ -55,10 +60,11 @@ public class Grid {
   public void animate2(){
     for (Cell[] row : cells) {
       for(Cell cell: row) {
-        float n = noise(cell.x*scale, cell.y*scale, z);
-        if (n>0.5) cell.setOrientation(true);
+        float n = sqrt(noise(cell.x/scale, cell.y/scale, z));
+        // float n = pow(noise(cell.x*scale, cell.y*scale, z), 2);
+        if (n>THRESHOLD) cell.setOrientation(true);
         else cell.setOrientation(false);
-        z += 0.00002;
+        z += z_inc;
       }
     }
   }
